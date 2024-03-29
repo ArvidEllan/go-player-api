@@ -1,0 +1,23 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+
+#Syntax
+:'
+aws iam create-role --role-name [role_name] \
+--assume-role-policy-document file://[file_path/file_name]
+'
+
+#Command
+#Remember to note the role ARN as well.
+aws iam create-role --role-name lambda-api \
+--assume-role-policy-document file://./trust-policy.json
